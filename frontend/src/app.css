@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+/* Optional: Add any global base styles here */
+body {
+  @apply bg-gray-900 text-gray-100 font-sans;
+}

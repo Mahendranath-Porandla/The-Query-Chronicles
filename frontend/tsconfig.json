@@ -1,0 +1,46 @@
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+		// No changes needed inside compilerOptions for the .d.ts file
+	},
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
+
+	// --- ADD THIS include SECTION ---
+	// Explicitly including the src directory ensures our custom .d.ts file is picked up,
+	// alongside the standard .ts and .svelte files.
+	// This often overrides/replaces any 'include' from the extended file,
+	// so make sure it covers everything needed. SvelteKit's default often includes these.
+	// Make sure this include list is comprehensive
+	"include": [
+        // Include files relative to the tsconfig.json location (frontend/)
+		".svelte-kit/ambient.d.ts",      // <<< Add SvelteKit's ambient types
+        ".svelte-kit/types/**/*.d.ts",   // <<< Add SvelteKit's generated route types
+		"src/**/*.d.ts",                 // Your custom declarations (like sqljs.d.ts)
+		"src/**/*.ts",
+		"src/**/*.js",
+		"src/**/*.svelte",
+        "vite.config.ts"                 // Include vite config if you have one
+		// Add any other necessary paths like 'tests/**/*'
+	],
+    // It's often good practice to explicitly exclude build outputs and node_modules
+    "exclude": [
+        "node_modules/**",
+        ".svelte-kit/**/output/**", // Exclude build output within .svelte-kit
+        "build/**" // Exclude the final build directory if needed
+    ]
+	// You might also need/want an "exclude" array, common defaults are:
+	// "exclude": ["node_modules/**", ".svelte-kit/**", "build/**"]
+}
