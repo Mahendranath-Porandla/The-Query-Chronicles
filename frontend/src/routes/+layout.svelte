@@ -28,7 +28,7 @@
 		<!-- Use a standard anchor tag for the home link if preferred,
 			 or keep using programmatic navigation if needed -->
 		<a href="/" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition">
-		  SQL Stories
+			The Query Chronicles
 		</a>
 		{#if !auth.isLoading}
 		   <AuthStatus />
@@ -46,7 +46,7 @@
 	</main>
   
 	<footer class="bg-gray-800 text-center p-4 text-sm text-gray-400 mt-auto">
-	  © {new Date().getFullYear()} SQL Stories. Learn SQL the fun way.
+	  © {new Date().getFullYear()} The Query Chronicles. Learn SQL the fun way.
 	</footer>
   </div>
   

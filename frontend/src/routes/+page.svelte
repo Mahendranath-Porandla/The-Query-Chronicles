@@ -85,7 +85,7 @@
   </script>
   
   <div class="text-center mb-12">
-    <h2 class="text-4xl font-bold mb-4 text-teal-300">Welcome to SQL Stories</h2>
+    <h2 class="text-4xl font-bold mb-4 text-teal-300">Welcome to The Query Chronicles</h2>
     <p class="text-lg text-gray-300 max-w-2xl mx-auto">
       Sharpen your SQL skills by diving into interactive narrative adventures. Choose a story below and query your way through mysteries, challenges, and thrilling plots!
     </p>
